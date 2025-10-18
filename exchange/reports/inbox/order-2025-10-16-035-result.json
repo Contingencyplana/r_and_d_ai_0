@@ -1,0 +1,32 @@
+{
+  "order_id": "035",
+  "started_at": "",
+  "expected_end_at": "",
+  "status": "pending",
+  "totals": {
+    "samples": 0,
+    "ops_total": null
+  },
+  "avg_ops_per_min": null,
+  "max_ops_per_min": null,
+  "violations": 0,
+  "dark_signs": 0,
+  "alerts": [],
+  "watcher_state": {
+    "first_timestamp": null,
+    "last_timestamp": null,
+    "caps": {
+      "ops_per_min": 3,
+      "ops_per_order": 6,
+      "ops_per_day": 60
+    },
+    "adherence": {
+      "within_ops_per_min": null,
+      "within_ops_per_order": null,
+      "within_ops_per_day": null
+    }
+  },
+  "recommendation": "pending",
+  "notes": "Prefilled stub. At T+24h, run tools\\hc_alfa\\summarize_telemetry.ps1 to produce the final result."
+}
+

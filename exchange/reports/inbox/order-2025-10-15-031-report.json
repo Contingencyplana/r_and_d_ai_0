@@ -1,0 +1,26 @@
+{
+  "schema": "field-report@1.0",
+  "report_id": "order-2025-10-15-031-report",
+  "origin": "toysoldiers_ai_0",
+  "relates_to": "order-2025-10-15-031",
+  "timestamp_submitted": "2025-10-18T13:15:00+00:00",
+  "status": "blocked",
+  "summary": "Order 031 canary B1/B2 validation BLOCKED - same schema drift issue as Orders 021 and 029.",
+  "details": {
+    "exports_location_b1": ".imports/toyfoundry/telemetry/quilt/exports/canary_b1/",
+    "exports_location_b2": ".imports/toyfoundry/telemetry/quilt/exports/canary_b2/",
+    "files_ingested": [
+      "canary_b1/composite_export.json",
+      "canary_b1/composite_export.csv",
+      "canary_b1/export_manifest.json",
+      "canary_b1/build_info.json",
+      "canary_b2/composite_export.json",
+      "canary_b2/composite_export.csv",
+      "canary_b2/export_manifest.json",
+      "canary_b2/build_info.json"
+    ],
+    "schema_drift": "Both canary batches use same schema as standard run - mismatch with Order 031 expectations",
+    "consumer_acceptance": "BLOCKED",
+    "blocker": "Awaiting schema alignment resolution from Order 021"
+  }
+}
