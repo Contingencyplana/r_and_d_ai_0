@@ -1,0 +1,24 @@
+{
+  "batch_id": "BATCH-001-Q4",
+  "range": "labscape_015-016",
+  "timestamp_start": "2025-10-19T09:45:00Z",
+  "status": "complete",
+  "progress": {
+    "current_labscape": "complete",
+    "completed": 2,
+    "remaining": 0,
+    "last_updated": "2025-10-19T09:55:00Z"
+  },
+  "labscapes": [
+    {
+      "id": "labscape_015",
+      "status": "operational",
+      "initialized": true
+    },
+    {
+      "id": "labscape_016",
+      "status": "operational",
+      "initialized": true
+    }
+  ]
+}
