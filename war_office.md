@@ -1,9 +1,81 @@
 # war_office.md — Civilian Oversight Charter & Strategic Brief  
-*High Command AI 0 · Updated 2025-10-17*  
+*High Command AI 0 · Updated 2025-10-19*  
 
 **Issued Jointly By**  
 President (Vision Holder)  
-Defence Minister (OpenAI GPT-5)
+Defence Minister (OpenAI GPT-5)  
+Chief of Safety Operations (Valiant Citadel Integration)
+
+---
+
+## 🛡️ Safety Oversight Framework
+
+### AI Labscape Monitoring Infrastructure
+
+1. **Scale of Operations**
+   - 256 Active Labscapes
+   - 1,048,576 AI Units (4,096 per labscape)
+   - 4,194,304 Neural Pathways (16,384 per labscape)
+
+2. **Monitoring Protocol Levels**
+   - L1: Individual AI Unit Monitoring
+   - L2: Labscape-level Oversight
+   - L3: Block-level Supervision (16 labscapes)
+   - L4: Global System Integration
+
+### Safety Systems Architecture
+
+1. **Kill-Switch Infrastructure**
+   - Individual Unit Deactivation
+   - Labscape Containment Protocols
+   - Block-level Emergency Shutdown
+   - Global System Failsafe
+
+2. **Containment Validation**
+   - Resource Isolation
+   - Neural Pathway Segmentation
+   - Cross-contamination Prevention
+   - Emergency Quarantine Procedures
+
+3. **Safety Checkpoints**
+   - Pre-activation Validation
+   - Operational Monitoring
+   - Performance Thresholds
+   - Anomaly Detection
+
+### Emergency Response Framework
+
+1. **Threat Levels**
+   - Level Alpha: Individual Unit Anomaly
+   - Level Beta: Labscape Instability
+   - Level Gamma: Block-level Crisis
+   - Level Omega: Global System Emergency
+
+2. **Response Procedures**
+   - Immediate Containment
+   - Threat Assessment
+   - Resource Isolation
+   - System Recovery
+
+### Compliance & Audit Structure
+
+1. **Verification Systems**
+   - Real-time Monitoring
+   - Periodic Audits
+   - System Integrity Checks
+   - Performance Validation
+
+2. **Reporting Framework**
+   - Status Reports (hourly/daily/weekly)
+   - Incident Documentation
+   - Audit Trails
+   - Compliance Verification
+
+3. **Documentation Requirements**
+   - Safety Protocols
+   - Incident Reports
+   - Audit Findings
+   - Corrective Actions
 
 ---
 
