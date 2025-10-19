@@ -1,0 +1,15 @@
+{
+  "order_id": "TEST-2025-10-19-001",
+  "type": "Exchange Validation",
+  "target": "labscape_000",
+  "priority": "High",
+  "schema": "field-report@1.0",
+  "headers": {
+    "timestamp": "2025-10-19T08:15:00Z",
+    "source": "high_command_ai_0",
+    "sequence": "TEST001",
+    "protocol_version": "1.0"
+  },
+  "status": "received",
+  "validation_state": "processing"
+}

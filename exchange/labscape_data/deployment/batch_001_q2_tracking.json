@@ -1,0 +1,11 @@
+{
+  "batch_id": "BATCH-001-Q2",
+  "range": "labscape_007-010",
+  "timestamp_start": "2025-10-19T09:15:00Z",
+  "status": "deploying",
+  "progress": {
+    "current_labscape": "labscape_007",
+    "completed": 0,
+    "remaining": 4
+  }
+}

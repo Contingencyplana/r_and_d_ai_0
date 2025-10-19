@@ -1,0 +1,29 @@
+{
+  "report_id": "TEST-2025-10-19-001",
+  "schema_version": "field-report@1.0",
+  "timestamp": "2025-10-19T01:00:00Z",
+  "workspace_id": "r_and_d_ai_0",
+  "report_type": "exchange_validation",
+  "status": "in_progress",
+  "validation_sequence": {
+    "stage": "initialization",
+    "steps_completed": 0,
+    "total_steps": 4
+  },
+  "test_results": {
+    "order_reception": null,
+    "header_validation": null,
+    "ledger_update": null,
+    "acknowledgment": null
+  },
+  "metrics": {
+    "processing_time": 0,
+    "validation_success": false,
+    "errors_encountered": 0
+  },
+  "labscape_data": {
+    "id": "labscape_000",
+    "exchange_status": "testing",
+    "validation_state": "in_progress"
+  }
+}

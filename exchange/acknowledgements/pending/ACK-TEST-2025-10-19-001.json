@@ -1,0 +1,36 @@
+{
+  "ack_id": "ACK-TEST-2025-10-19-001",
+  "report_id": "TEST-2025-10-19-001",
+  "schema_version": "field-report@1.0",
+  "timestamp": "2025-10-19T08:15:30Z",
+  "workspace_id": "r_and_d_ai_0",
+  "status": "completed",
+  "validation": {
+    "order_036_compliant": true,
+    "schema_valid": true,
+    "ledger_updated": true
+  },
+  "processing_results": {
+    "header_validation": {
+      "status": "passed",
+      "timestamp_valid": true,
+      "source_verified": true,
+      "protocol_version_valid": true
+    },
+    "ledger_update": {
+      "status": "successful",
+      "timestamp": "2025-10-19T08:15:00Z",
+      "labscape_status_updated": true
+    },
+    "status_update": {
+      "previous_status": "prototype",
+      "current_status": "validation_in_progress",
+      "update_timestamp": "2025-10-19T08:15:00Z"
+    }
+  },
+  "labscape_reference": {
+    "id": "labscape_000",
+    "status": "validation_in_progress",
+    "current_order": "TEST-2025-10-19-001"
+  }}
+}

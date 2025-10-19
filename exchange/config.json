@@ -1,0 +1,46 @@
+{
+  "mode": "integrated",
+  "version": "1.0.0",
+  "upstream_root": "${HIGH_COMMAND_EXCHANGE_ROOT}",
+  "workspace_id": "r_and_d_ai_0",
+  "schema_version": "field-report@1.0",
+  "order_validation": "Order-036",
+  "mapping": {
+    "local": {
+      "orders_pending": "exchange/orders/pending",
+      "reports_inbox": "exchange/reports/inbox",
+      "acks_pending": "exchange/acknowledgements/pending",
+      "acks_logged": "exchange/acknowledgements/logged",
+      "labscape_data": "exchange/labscape_data"
+    },
+    "upstream": {
+      "orders_pending": "orders/pending",
+      "orders_dispatched": "orders/dispatched", 
+      "reports_inbox": "reports/inbox",
+      "reports_archived": "reports/archived",
+      "acks_pending": "acknowledgements/pending",
+      "acks_logged": "acknowledgements/logged",
+      "labscape_exchange": "labscape_exchange"
+    }
+  },
+  "labscape_validation": {
+    "prototype_id": "labscape_000",
+    "schema_version": "labscape@1.0",
+    "validation_points": [
+      "architecture",
+      "neural_pathways",
+      "safety_protocols",
+      "performance_metrics"
+    ]
+  },
+  "ledger_config": {
+    "tracking_enabled": true,
+    "metrics_schema": "labscape_metrics@1.0",
+    "sync_interval": 300,
+    "validation_hooks": [
+      "pre_submission",
+      "post_acknowledgement",
+      "status_update"
+    ]
+  }
+}
