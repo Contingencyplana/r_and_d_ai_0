@@ -13,3 +13,6 @@
 
 2025-10-16T06:12:34.5036126Z - Orders 014–017, 020–021: reports completed and archived; 030/031 ACKs logged.
 
+2025-10-20T00:15:00Z - order-2025-10-20-001 received; acknowledgment sent
+2025-10-20T00:20:00Z - order-2025-10-20-001-report submitted; exchange system verification complete
+
