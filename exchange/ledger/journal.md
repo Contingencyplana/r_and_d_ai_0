@@ -16,3 +16,5 @@
 2025-10-20T00:15:00Z - order-2025-10-20-001 received; acknowledgment sent
 2025-10-20T00:20:00Z - order-2025-10-20-001-report submitted; exchange system verification complete
 
+
+2025-10-21T00:00:00Z - Archived legacy test artifacts into exchange/archive/nonstandard (TEST-2025-10-19 series, safety snapshots)
