@@ -1,91 +1,129 @@
 # Publish reports and acknowledgements to High Command
-$config = Get-Content -Path ".\exchange\config.json" | ConvertFrom-Json
+$ErrorActionPreference = 'Stop'
 
-$localPath = $config.workspace.local
-$remotePath = $config.workspace.remote
+function Resolve-UpstreamRoot {
+    param(
+        [string]$RootValue
+    )
 
-# Push reports
-$reportsPath = Join-Path $localPath $config.paths.reports.inbox
-$remoteReportsPath = Join-Path $remotePath $config.paths.reports.inbox
+    if ($RootValue -match '^\$\{(?<var>.+)\}$') {
+        $resolved = [Environment]::GetEnvironmentVariable($Matches.var)
+        if (-not $resolved) {
+            throw "Environment variable '$($Matches.var)' for upstream_root is not set."
+        }
+        return $resolved
+    }
 
-if (Test-Path $reportsPath) {
-    Get-ChildItem $reportsPath -Filter *.json | ForEach-Object {
-        $targetPath = Join-Path $remoteReportsPath $_.Name
-        if (-not (Test-Path $targetPath)) {
-            Copy-Item $_.FullName -Destination $targetPath
-            Write-Host "Published report: $($_.Name)"
-            
-            # Move to archived
-            $archivedPath = Join-Path $localPath $config.paths.reports.archived
-            Move-Item $_.FullName -Destination (Join-Path $archivedPath $_.Name)
-            
-            # Update ledger
-            $ledgerPath = Join-Path $localPath $config.paths.ledger
-            $journalPath = Join-Path $ledgerPath "journal.md"
-            $indexPath = Join-Path $ledgerPath "index.json"
-            
-            # Add journal entry
-            $date = Get-Date -Format "yyyy-MM-dd"
-            $entry = @"
+    return $RootValue
+}
 
-## [$date] $($_.BaseName)
-- Type: REPORT
-- Status: DISPATCHED
-- Reference: $($_.BaseName -replace '-report$','')
-- Details: Report submitted to High Command
-"@
-            Add-Content $journalPath $entry
-            
-            # Update index
-            $index = Get-Content $indexPath | ConvertFrom-Json
-            $index.reports | Add-Member -NotePropertyName $_.BaseName -NotePropertyValue @{
-                submitted = $date
-                status = "DISPATCHED"
+$repoRoot = (Get-Location).Path
+$configPath = Join-Path $repoRoot 'exchange\config.json'
+
+if (-not (Test-Path $configPath)) {
+    throw "Configuration file not found at $configPath"
+}
+
+$config = Get-Content -Path $configPath | ConvertFrom-Json
+$upstreamRoot = Resolve-UpstreamRoot -RootValue $config.upstream_root
+
+$logRoot = Join-Path $repoRoot 'exchange\logs'
+if (-not (Test-Path $logRoot)) {
+    New-Item -Path $logRoot -ItemType Directory | Out-Null
+}
+$logPath = Join-Path $logRoot 'publish_outbox.log'
+
+function Write-Log {
+    param(
+        [string]$Message
+    )
+
+    $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
+    "$timestamp - $Message" | Tee-Object -FilePath $logPath -Append | Out-Null
+}
+
+Write-Log 'Starting publish_outbox sweep'
+
+$localReports = Join-Path $repoRoot $config.mapping.local.reports_inbox
+$archivedReports = Join-Path $repoRoot $config.mapping.local.reports_archived
+$upstreamReports = Join-Path $upstreamRoot $config.mapping.upstream.reports_inbox
+
+$localAcks = Join-Path $repoRoot $config.mapping.local.acks_pending
+$loggedAcks = Join-Path $repoRoot $config.mapping.local.acks_logged
+$upstreamAcks = Join-Path $upstreamRoot $config.mapping.upstream.acks_pending
+
+$ledgerRoot = Join-Path $repoRoot 'exchange\ledger'
+$journalPath = Join-Path $ledgerRoot 'journal.md'
+$indexPath = Join-Path $ledgerRoot 'index.json'
+
+foreach ($path in @($archivedReports, $loggedAcks)) {
+    if (-not (Test-Path $path)) {
+        New-Item -Path $path -ItemType Directory | Out-Null
+    }
+}
+
+if (Test-Path $localReports) {
+    Get-ChildItem $localReports -Filter *.json | ForEach-Object {
+        $reportName = $_.Name
+        $reportId = $_.BaseName
+        $targetPath = Join-Path $upstreamReports $reportName
+
+        if (Test-Path $targetPath) {
+            return
+        }
+
+        Write-Log "Publishing report $reportId"
+        Copy-Item $_.FullName -Destination $targetPath
+        Move-Item $_.FullName -Destination (Join-Path $archivedReports $reportName)
+
+        $timestamp = Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ'
+        $journalEntry = "- $timestamp - Dispatched report $reportId to upstream"
+        Add-Content -Path $journalPath -Value $journalEntry
+
+        if (Test-Path $indexPath) {
+            $index = Get-Content $indexPath | ConvertFrom-Json -AsHashtable
+
+            if (-not $index.ContainsKey('reports')) {
+                $index['reports'] = @{}
             }
-            $index | ConvertTo-Json -Depth 10 | Set-Content $indexPath
+
+            $index['reports'][$reportId] = "reports/archived/$reportName"
+            $index['last_updated'] = $timestamp
+            $index | ConvertTo-Json -Depth 6 | Set-Content $indexPath
         }
     }
 }
 
-# Push acknowledgements
-$acksPath = Join-Path $localPath $config.paths.acknowledgements.pending
-$remoteAcksPath = Join-Path $remotePath $config.paths.acknowledgements.pending
+if (Test-Path $localAcks) {
+    Get-ChildItem $localAcks -Filter *.json | ForEach-Object {
+        $ackName = $_.Name
+        $ackId = $_.BaseName
+        $targetPath = Join-Path $upstreamAcks $ackName
 
-if (Test-Path $acksPath) {
-    Get-ChildItem $acksPath -Filter *.json | ForEach-Object {
-        $targetPath = Join-Path $remoteAcksPath $_.Name
-        if (-not (Test-Path $targetPath)) {
-            Copy-Item $_.FullName -Destination $targetPath
-            Write-Host "Published acknowledgement: $($_.Name)"
-            
-            # Move to logged
-            $loggedPath = Join-Path $localPath $config.paths.acknowledgements.logged
-            Move-Item $_.FullName -Destination (Join-Path $loggedPath $_.Name)
-            
-            # Update ledger
-            $ledgerPath = Join-Path $localPath $config.paths.ledger
-            $journalPath = Join-Path $ledgerPath "journal.md"
-            $indexPath = Join-Path $ledgerPath "index.json"
-            
-            # Add journal entry
-            $date = Get-Date -Format "yyyy-MM-dd"
-            $entry = @"
+        if (Test-Path $targetPath) {
+            return
+        }
 
-## [$date] $($_.BaseName)
-- Type: ACKNOWLEDGEMENT
-- Status: DISPATCHED
-- Reference: $($_.BaseName -replace '-ack$','')
-- Details: Acknowledgement sent to High Command
-"@
-            Add-Content $journalPath $entry
-            
-            # Update index
-            $index = Get-Content $indexPath | ConvertFrom-Json
-            $index.acknowledgements | Add-Member -NotePropertyName $_.BaseName -NotePropertyValue @{
-                sent = $date
-                status = "DISPATCHED"
+        Write-Log "Publishing acknowledgement $ackId"
+        Copy-Item $_.FullName -Destination $targetPath
+        Move-Item $_.FullName -Destination (Join-Path $loggedAcks $ackName)
+
+        $timestamp = Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ'
+        $journalEntry = "- $timestamp - Dispatched acknowledgement $ackId to upstream"
+        Add-Content -Path $journalPath -Value $journalEntry
+
+        if (Test-Path $indexPath) {
+            $index = Get-Content $indexPath | ConvertFrom-Json -AsHashtable
+
+            if (-not $index.ContainsKey('acks')) {
+                $index['acks'] = @{}
             }
-            $index | ConvertTo-Json -Depth 10 | Set-Content $indexPath
+
+            $index['acks'][$ackId] = "acknowledgements/logged/$ackName"
+            $index['last_updated'] = $timestamp
+            $index | ConvertTo-Json -Depth 6 | Set-Content $indexPath
         }
     }
 }
+
+Write-Log 'Publish_outbox sweep complete'
