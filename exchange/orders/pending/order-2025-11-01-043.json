@@ -1,0 +1,63 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-2025-11-01-043",
+  "issued_by": "high_command_ai_0",
+  "target": "high_command_ai_0",
+  "priority": "high",
+  "timestamp_issued": "2025-11-04T16:50:00Z",
+  "summary": "Emoji Runtime ↔ Factory-Order Contract Tests: golden samples, schema drift checks, and CI-friendly runner.",
+  "context": "With ORDER-040/041 closed and ORDER-042 demo complete, institute a cross-org contract test suite to detect schema drift between emoji-runtime@1.0 and factory-order@1.0. Tests should be fast, deterministic, and runnable in offline mode.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "scaffold_contract_suite",
+      "details": "Create `tools/contract_test_runner.py` and `contract_samples/` with golden emoji-runtime inputs and expected factory-order outputs."
+    },
+    {
+      "step": 2,
+      "action": "wire_validators",
+      "details": "Reuse `tools/schema_validator.py` and add assertions for required fields, type checks, and allowed values across both schemas."
+    },
+    {
+      "step": 3,
+      "action": "add_drift_checks",
+      "details": "Detect unexpected fields, missing fields, and enum changes. Fail with actionable diffs and write a summary report under `reports/contract_test_report.json`."
+    },
+    {
+      "step": 4,
+      "action": "offline_runner",
+      "details": "Ensure the suite runs without network and exits non-zero on failure; emit JUnit-style output optionally for CI integration."
+    },
+    {
+      "step": 5,
+      "action": "submit_completion_report",
+      "details": "File `exchange/reports/inbox/order-2025-11-01-043-report.json` with test counts, failures (if any), and next steps for Toyfoundry/Toysoldiers/R&D."
+    }
+  ],
+  "success_criteria": [
+    "Golden sample set covers all Level-0 templates",
+    "Validator + drift checks catch deliberate perturbations",
+    "Runner executes locally in < 10s with clear output",
+    "Completion report filed with evidence and follow-ups"
+  ],
+  "dependencies": ["order-2025-11-01-040", "order-2025-11-01-041", "order-2025-11-01-042"],
+  "requires_ack": true,
+  "expires_at": "2025-11-14T23:59:59Z",
+  "attachments": [
+    { "type": "reference", "path": "tools/schema_validator.py", "description": "Existing schema validator utility" },
+    { "type": "reference", "path": "golf_00/delta_00/alfa_04/emoji_translator.py", "description": "Emoji-runtime source" },
+    { "type": "reference", "path": "exchange/reports/archived/order-2025-11-01-040-report.json", "description": "Toyfoundry adapter report" },
+    { "type": "reference", "path": "exchange/reports/archived/order-2025-11-01-041-report.json", "description": "Toysoldiers monitoring report" }
+  ],
+  "safety_notes": [
+    "No production endpoints; offline-only, deterministic tests",
+    "Avoid embedding PII in samples; use synthetic data"
+  ],
+  "metadata": {
+    "owner": "high_command_ai_0",
+    "timestamp": "2025-11-04T16:50:00Z",
+    "approvers": ["high_command", "war_office", "valiant_citadel"],
+    "classification": "contract_tests"
+  }
+}
+

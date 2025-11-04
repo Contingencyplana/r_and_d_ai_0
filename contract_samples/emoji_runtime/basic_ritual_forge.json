@@ -1,0 +1,28 @@
+{
+  "schema": "emoji-runtime@1.0",
+  "glyph_chain": ["???", "??", "??", "?"],
+  "spoken": ["forge", "craft", "field", "victory"],
+  "raw": ["???", "??", "??", "?"],
+  "actor": "actor.forge",
+  "verb": "verb.craft",
+  "target": "actor.field",
+  "qualifiers": [],
+  "outcomes": ["outcome.success"],
+  "summary": "Forge craft field -> victory",
+  "intent": {
+    "actor": "forge",
+    "action": "craft",
+    "target": "field",
+    "qualifiers": [],
+    "outcome": "success"
+  },
+  "telemetry_stub": {
+    "batch_id": "forge-craft-20251104T000000Z",
+    "ritual": "forge",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 0
+  },
+  "created_at": "2025-11-04T00:00:00Z"
+}
+

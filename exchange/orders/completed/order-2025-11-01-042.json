@@ -1,0 +1,90 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-2025-11-01-042",
+  "issued_by": "high_command_ai_0",
+  "target": "high_command_ai_0",
+  "priority": "high",
+  "timestamp_issued": "2025-11-01T11:00:00Z",
+  "summary": "Alfa Zero Overlay Demo Cut: play a curated emoji-runtime scene via Alfa 04, with narration sync and telemetry logging.",
+  "context": "Toyfoundry (ORDER-040) and Toysoldiers (ORDER-041) are closed. High Command will now ship a playable demo slice that consumes emoji-runtime@1.0 sample chains through Alfa 04 and renders them in the Alfa 00 overlay with basic controls and monitoring.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "wire_overlay_input",
+      "details": "Ingest emoji-runtime@1.0 sample chains from Alfa 04. Add a loader in `golf_00/delta_00/alfa_00/overlay_bridge.py` that consumes outputs from `golf_00/delta_00/alfa_04/dispatch_sample_chains.py` (fallback: `golf_00/delta_00/alfa_04/sample_chains.json`). Validate with `tools/schema_validator.py`."
+    },
+    {
+      "step": 2,
+      "action": "add_playback_and_sync",
+      "details": "Implement basic playback controls and a narration sync indicator in `golf_00/delta_00/alfa_00/alfa_zero_ui.py` and `golf_00/delta_00/alfa_00/alfa_zero_controller.py` (states: green=sync, amber=late, red=drop)."
+    },
+    {
+      "step": 3,
+      "action": "telemetry_logger",
+      "details": "Log demo sessions to `telemetry/emoji_runtime/demo_runs/ORDER-042-<session>.jsonl` with fields: session_id, chain_id, frame_ts, glyph, narration_text, sync_state, notes."
+    },
+    {
+      "step": 4,
+      "action": "demo_smoke_run",
+      "details": "Run `golf_00/delta_00/alfa_00/overlay_test_harness.py` with the curated scene. Capture evidence: `logs/overlay_demo_run.log`, `telemetry/emoji_runtime/demo_runs/*.jsonl`, and any screenshots if available."
+    },
+    {
+      "step": 5,
+      "action": "update_runbook",
+      "details": "Document the demo run procedure and controls in `golf_00/delta_00/alfa_00/README.md` and align with `planning/alfa_zero_overlay_ui_plan.md`."
+    },
+    {
+      "step": 6,
+      "action": "submit_completion_report",
+      "details": "File `exchange/reports/inbox/order-2025-11-01-042-report.json` including: steps executed, telemetry sample excerpt, sync indicator stats, screenshots/logs paths, and any follow-ups."
+    }
+  ],
+  "success_criteria": [
+    "Overlay plays one curated emoji-runtime scene end-to-end without errors",
+    "Narration sync indicator remains green for ≥95% of frames",
+    "Telemetry JSONL written to `telemetry/emoji_runtime/demo_runs/` and validates",
+    "Runbook updated with clear start/stop and evidence capture steps",
+    "Completion report filed with links to logs/telemetry and next actions"
+  ],
+  "dependencies": ["order-2025-11-01-040", "order-2025-11-01-041"],
+  "requires_ack": true,
+  "expires_at": "2025-11-10T23:59:59Z",
+  "attachments": [
+    {
+      "type": "reference",
+      "path": "golf_00/delta_00/alfa_00/README.md",
+      "description": "Overlay runbook"
+    },
+    {
+      "type": "reference",
+      "path": "planning/alfa_zero_overlay_ui_plan.md",
+      "description": "UI/controls plan"
+    },
+    {
+      "type": "reference",
+      "path": "golf_00/delta_00/alfa_04/dispatch_sample_chains.py",
+      "description": "Sample chain generator"
+    },
+    {
+      "type": "reference",
+      "path": "golf_00/delta_00/alfa_04/sample_chains.json",
+      "description": "Fallback sample chains"
+    },
+    {
+      "type": "reference",
+      "path": "tools/schema_validator.py",
+      "description": "Schema validator utility"
+    }
+  ],
+  "safety_notes": [
+    "Keep demo payloads lore‑aligned; avoid leaking internal paths in UI",
+    "Do not persist PII in telemetry; session_ids should be random nonces",
+    "Gate any screenshot capture behind an explicit flag"
+  ],
+  "metadata": {
+    "owner": "high_command_ai_0",
+    "timestamp": "2025-11-01T11:00:00Z",
+    "approvers": ["high_command", "war_office"],
+    "classification": "pivot_five_overlay_demo"
+  }
+}

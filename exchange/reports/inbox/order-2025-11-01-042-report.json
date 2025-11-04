@@ -1,0 +1,39 @@
+{
+  "schema": "factory-report@1.0",
+  "report_id": "order-2025-11-01-042-report",
+  "order_id": "order-2025-11-01-042",
+  "reported_by": "high_command_ai_0",
+  "receiver": "high_command_ai_0",
+  "timestamp_reported": "2025-11-04T16:42:00Z",
+  "status": "completed",
+  "summary": "ORDER-042 completed: Overlay demo dispatched via Alfa 00 using Alfa 04 samples; sync indicator printed; telemetry JSONL captured and synced.",
+  "directives_status": [
+    { "step": 1, "directive": "wire_overlay_input", "status": "completed", "notes": [
+      "overlay_bridge dispatched mapped cell 0,4 (basic_ritual_forge) via alfa_zero_ui"
+    ] },
+    { "step": 2, "directive": "add_playback_and_sync", "status": "completed", "notes": [
+      "Added minimal sync indicator to alfa_zero_ui (prints 'Sync: <state>'); telemetry now includes sync_state"
+    ] },
+    { "step": 3, "directive": "telemetry_logger", "status": "completed", "notes": [
+      "telemetry JSONL written to telemetry/emoji_runtime/demo_runs/ORDER-042-DEMO.jsonl"
+    ] },
+    { "step": 4, "directive": "demo_smoke_run", "status": "completed", "notes": [
+      "single-dispatch smoke run completed; payload emitted and mirrored via offline sync"
+    ] },
+    { "step": 5, "directive": "update_runbook", "status": "completed", "notes": [
+      "Updated demo instructions in golf_00/delta_00/alfa_00/README.md"
+    ] },
+    { "step": 6, "directive": "submit_completion_report", "status": "pending", "notes": [] }
+  ],
+  "evidence": {
+    "telemetry_dir": "telemetry/emoji_runtime/demo_runs/",
+    "telemetry_file": "telemetry/emoji_runtime/demo_runs/ORDER-042-DEMO.jsonl",
+    "payloads": [
+      "outbox/orders/emoji_runtime/20251104T163455Z_alfa_zero_basic_ritual_forge.json"
+    ],
+    "logs": [ ],
+    "screenshots": []
+  },
+  "open_follow_ups": [],
+  "attachments": []
+}

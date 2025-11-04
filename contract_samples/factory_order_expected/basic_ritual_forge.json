@@ -1,0 +1,14 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "SAMPLE-BASIC-RITUAL-FORGE",
+  "issued_by": "high_command_ai_0",
+  "target": "toyfoundry_ai_0",
+  "priority": "low",
+  "timestamp_issued": "2025-11-04T00:00:00Z",
+  "summary": "Forge crafts a steadfast ally to hold the line.",
+  "directives": [
+    { "step": 1, "action": "craft", "details": "Forge crafts field per Level-0 mapping." }
+  ],
+  "requires_ack": false
+}
+
