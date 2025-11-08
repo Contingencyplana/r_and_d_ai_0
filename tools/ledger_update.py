@@ -82,6 +82,12 @@ def update_ledger(repo_root: Path) -> int:
     exchange = repo_root / "exchange"
 
     changed = 0
+    # Snapshot current on-disk content to detect net changes
+    before_text: Optional[str]
+    try:
+        before_text = ledger.path.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        before_text = None
 
     # Index acks
     for f in (exchange / "acknowledgements" / "logged").glob("order-*-ack.json"):
@@ -143,9 +149,14 @@ def update_ledger(repo_root: Path) -> int:
             entry["status"] = new_status
             changed += 1
 
-    if changed:
+    # Compute the would-be serialized output and avoid writing if identical
+    after_text = json.dumps(ledger.data, indent=2, ensure_ascii=False) + "\n"
+    will_write = changed > 0 and (before_text is None or before_text != after_text)
+    if will_write:
         ledger.save()
-    return changed
+        return changed
+    # No net change; report zero to be idempotent
+    return 0
 
 
 if __name__ == "__main__":

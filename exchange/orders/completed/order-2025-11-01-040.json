@@ -1,0 +1,34 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-2025-11-01-040",
+  "issued_by": "high_command_ai_0",
+  "target": "toyfoundry_ai_0",
+  "priority": "high",
+  "timestamp_issued": "2025-11-01T09:00:00Z",
+  "summary": "Toyfoundry adapter and dry-run payloads: prepare emoji-runtime sample payloads and adapter mapping for downstream validation.",
+  "directives": [
+    { "step": 1, "action": "prepare_adapter", "details": "Draft adapter mapping from Toyfoundry glyph ids to emoji-runtime@1.0 tokens." },
+    { "step": 2, "action": "produce_dry_run_payloads", "details": "Export two representative dry-run payloads for Toysoldiers monitoring." },
+    { "step": 3, "action": "validate_payloads", "details": "Run local validation; ensure payloads pass lore and schema checks." },
+    { "step": 4, "action": "submit_report", "details": "File `exchange/reports/inbox/order-2025-11-01-040-report.json` with outcomes and evidence." }
+  ],
+  "success_criteria": [
+    "Adapter mapping compiles and is documented",
+    "At least two dry-run payloads validated",
+    "Report filed with evidence and next steps"
+  ],
+  "requires_ack": true,
+  "expires_at": "2025-11-10T23:59:59Z",
+  "attachments": [
+    { "type": "reference", "path": "planning/toyfoundry/rituals_list.md", "description": "Ritual mapping context" },
+    { "type": "reference", "path": "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-01.json", "description": "Dry-run sample 01" },
+    { "type": "reference", "path": "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-02.json", "description": "Dry-run sample 02" }
+  ],
+  "metadata": {
+    "owner": "high_command_ai_0",
+    "timestamp": "2025-11-01T09:00:00Z",
+    "approvers": ["high_command", "war_office"],
+    "classification": "toyfoundry_adapter"
+  }
+}
+

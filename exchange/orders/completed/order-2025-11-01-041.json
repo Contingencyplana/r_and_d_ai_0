@@ -1,0 +1,35 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-2025-11-01-041",
+  "issued_by": "high_command_ai_0",
+  "target": "toysoldiers_ai_0",
+  "priority": "high",
+  "timestamp_issued": "2025-11-01T10:00:00Z",
+  "summary": "Ingest Toyfoundry dry-run payloads and stand up monitoring hooks for emoji-runtime promotions.",
+  "directives": [
+    { "step": 1, "action": "acknowledge_dependency", "details": "Confirm dependency on Toyfoundry ORDER-040 and path to its report." },
+    { "step": 2, "action": "update_ingestion_pipeline", "details": "Extend translator lexicon and validators for Toyfoundry glyph ids." },
+    { "step": 3, "action": "extend_monitoring_hooks", "details": "Enforce narration.sync checks; log runs to factory_order_monitor.log." },
+    { "step": 4, "action": "validate_round_trip", "details": "Run monitoring pass against TF-EMOJI-DRYRUN payloads and record results." },
+    { "step": 5, "action": "file_after_action_report", "details": "File report to High Command with evidence and follow-ups." }
+  ],
+  "success_criteria": [
+    "Translator recognizes Toyfoundry glyph ids",
+    "Monitoring run completes cleanly with logs",
+    "After-action report archived with evidence"
+  ],
+  "requires_ack": true,
+  "expires_at": "2025-11-10T23:59:59Z",
+  "attachments": [
+    { "type": "reference", "path": "tools/emoji_translator.py", "description": "Translator utility" },
+    { "type": "reference", "path": "tools/factory_order_monitor.py", "description": "Monitoring tool" },
+    { "type": "reference", "path": "exchange/reports/archived/order-2025-11-01-040-report.json", "description": "Toyfoundry adapter report" }
+  ],
+  "metadata": {
+    "owner": "high_command_ai_0",
+    "timestamp": "2025-11-01T10:00:00Z",
+    "approvers": ["high_command", "war_office"],
+    "classification": "toysoldiers_ingestion_monitoring"
+  }
+}
+

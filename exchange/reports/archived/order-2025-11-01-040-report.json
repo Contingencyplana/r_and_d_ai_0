@@ -1,0 +1,27 @@
+{
+  "schema": "factory-report@1.0",
+  "report_id": "order-2025-11-01-040-report",
+  "order_id": "order-2025-11-01-040",
+  "reported_by": "toyfoundry_ai_0",
+  "receiver": "high_command_ai_0",
+  "timestamp_reported": "2025-11-03T02:45:00Z",
+  "status": "completed",
+  "summary": "Toyfoundry adapter mapping created and dry-run payloads produced for emoji-runtime validation by Toysoldiers.",
+  "directives_status": [
+    { "step": 1, "directive": "prepare_adapter", "status": "completed", "notes": ["Mapping drafted for glyph ids: scout, barrier, probe, steadfast, cautious, fallback."] },
+    { "step": 2, "directive": "produce_dry_run_payloads", "status": "completed", "notes": ["Two payloads exported to telemetry/emoji_runtime/promoted_samples/."] },
+    { "step": 3, "directive": "validate_payloads", "status": "completed", "notes": ["Local schema and lore checks passed."] },
+    { "step": 4, "directive": "submit_report", "status": "completed", "notes": ["Report logged for High Command ingestion via offline bridge."] }
+  ],
+  "evidence": {
+    "payloads": [
+      "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-01.json",
+      "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-02.json"
+    ]
+  },
+  "attachments": [
+    { "type": "payload_sample", "path": "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-01.json" },
+    { "type": "payload_sample", "path": "telemetry/emoji_runtime/promoted_samples/TF-EMOJI-DRYRUN-02.json" }
+  ]
+}
+
