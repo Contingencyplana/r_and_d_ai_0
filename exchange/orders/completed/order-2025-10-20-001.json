@@ -1,0 +1,46 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-2025-10-20-001",
+  "issued_by": "high_command_ai_0",
+  "target": "r_and_d_ai_0",
+  "priority": "normal",
+  "timestamp_issued": "2025-10-20T00:05:00Z",
+  "summary": "Validate the R&D exchange infrastructure end-to-end and confirm readiness for continued operations.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "acknowledge_receipt",
+      "details": "Confirm ownership of the exchange readiness check and log acknowledgement in the ledger."
+    },
+    {
+      "step": 2,
+      "action": "verify_exchange_subsystems",
+      "details": "Inspect orders, reports, acknowledgements, and ledger directories; ensure heartbeat and sync cadences are operational."
+    },
+    {
+      "step": 3,
+      "action": "run_sync_validation",
+      "details": "Execute the scheduled offline sync cycle and capture latency metrics for the exchange hub."
+    },
+    {
+      "step": 4,
+      "action": "submit_completion_report",
+      "details": "File a readiness report summarizing findings, metrics, and any remediation follow-ups."
+    }
+  ],
+  "dependencies": [],
+  "requires_ack": true,
+  "expires_at": "2025-10-21T00:00:00Z",
+  "attachments": [
+    {
+      "type": "reference",
+      "path": "exchange/ledger/journal.md",
+      "description": "Exchange cadence journal"
+    },
+    {
+      "type": "reference",
+      "path": "tools/offline_sync_exchange.py",
+      "description": "Sync utility referenced in the directives"
+    }
+  ]
+}
