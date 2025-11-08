@@ -1,0 +1,19 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "SAMPLE-GUARDED-DELIVERY",
+  "issued_by": "high_command_ai_0",
+  "target": "toysoldiers_ai_0",
+  "priority": "normal",
+  "timestamp_issued": "2025-11-04T01:00:00Z",
+  "summary": "Sentinel escorts the convoy with shielded diligence to keep it steadfast.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "escort",
+      "details": "Sentinel unit escorts the shielded convoy through the delivery corridor."
+    }
+  ],
+  "requires_ack": false,
+  "dependencies": [],
+  "attachments": []
+}

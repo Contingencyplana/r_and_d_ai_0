@@ -1,18 +1,26 @@
-Contract Samples (Skeleton)
+# Contract Samples
 
 Layout
-- emoji_runtime/: golden input payloads (emoji-runtime@1.0)
-- factory_order_expected/: expected outputs (factory-order@1.0)
+
+- `emoji_runtime/`: golden emoji-runtime@1.0 payloads
+- `factory_order_expected/`: matching factory-order@1.0 payloads
 
 Filename pairs
-- For each emoji_runtime/<name>.json there should be a matching
-  factory_order_expected/<name>.json.
 
-Scope
-- Cover Level-0 templates at minimum: basic_ritual, guarded_delivery,
-  signal_loop, conditional_repeat.
+- Each `emoji_runtime/<name>.json` must have a matching
+  `factory_order_expected/<name>.json`.
 
-Validation
-- Runner validates schemas for both input and expected, then performs
-  structural checks (to be extended by implementers).
+Coverage
+
+- Level-0 templates: `basic_ritual_forge`, `guarded_delivery`,
+  `signal_loop`, `conditional_repeat`.
+- Samples intentionally include actor/action/target/outcome vocabulary so
+  drift checks can confirm the contract mapping.
+
+Usage
+
+- Run `python tools/contract_test_runner.py` from the repo root.
+- Optional flags:
+  - `--fail-fast` stops on the first failure.
+  - `--junit reports/contract_tests.junit.xml` emits CI-friendly output.
 

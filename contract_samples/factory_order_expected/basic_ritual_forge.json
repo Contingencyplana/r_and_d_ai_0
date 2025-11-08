@@ -5,10 +5,16 @@
   "target": "toyfoundry_ai_0",
   "priority": "low",
   "timestamp_issued": "2025-11-04T00:00:00Z",
-  "summary": "Forge crafts a steadfast ally to hold the line.",
+  "summary": "Forge crafts an ally to secure victory.",
   "directives": [
-    { "step": 1, "action": "craft", "details": "Forge crafts field per Level-0 mapping." }
+    {
+      "step": 1,
+      "action": "craft",
+      "details": "Forge crafts ally constructs per Level-0 mapping to achieve victory."
+    }
   ],
-  "requires_ack": false
+  "requires_ack": false,
+  "dependencies": [],
+  "attachments": []
 }
 

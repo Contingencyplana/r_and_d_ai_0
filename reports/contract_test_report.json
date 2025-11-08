@@ -1,9 +1,94 @@
 {
-  "total": 0,
-  "passed": 0,
+  "generated_at": "2025-11-08T14:42:04.932145Z",
+  "total": 4,
+  "passed": 4,
   "failed": 0,
-  "skipped": 0,
-  "schema_results": [],
-  "cases": []
+  "schema_results": [
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\emoji_runtime\\basic_ritual_forge.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\factory_order_expected\\basic_ritual_forge.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\emoji_runtime\\conditional_repeat.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\factory_order_expected\\conditional_repeat.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\emoji_runtime\\guarded_delivery.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\factory_order_expected\\guarded_delivery.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\emoji_runtime\\signal_loop.json",
+      "status": "ok",
+      "message": null
+    },
+    {
+      "path": "C:\\Users\\Admin\\r_and_d_ai_0\\contract_samples\\factory_order_expected\\signal_loop.json",
+      "status": "ok",
+      "message": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "basic_ritual_forge",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "conditional_repeat",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "guarded_delivery",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "signal_loop",
+      "status": "passed",
+      "issues": []
+    }
+  ],
+  "drift_summary": {},
+  "successes": [
+    {
+      "name": "basic_ritual_forge",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "conditional_repeat",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "guarded_delivery",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "signal_loop",
+      "status": "passed",
+      "issues": []
+    }
+  ],
+  "duration_seconds": 0.000999
 }
-

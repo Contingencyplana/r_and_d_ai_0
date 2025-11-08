@@ -8,21 +8,46 @@
   "status": "completed",
   "summary": "Contract test suite executed against four Level-0 samples; all schema and drift checks passed with report + JUnit artifacts generated.",
   "directives_status": [
-    { "step": 1, "directive": "scaffold_contract_suite", "status": "completed", "notes": [
-      "tools/contract_test_runner.py created; contract_samples/ seeded with four Level-0 pairs"
-    ] },
-    { "step": 2, "directive": "wire_validators", "status": "completed", "notes": [
-      "Schema validator now enforces required fields, types, and telemetry enums for emoji-runtime@1.0 and factory-order@1.0"
-    ] },
-    { "step": 3, "directive": "add_drift_checks", "status": "completed", "notes": [
-      "Runner flags missing/unexpected fields plus summary, directive, and glyph drift; results aggregated in drift_summary"
-    ] },
-    { "step": 4, "directive": "offline_runner", "status": "completed", "notes": [
-      "tools/contract_test_runner.py --junit reports/contract_tests.junit.xml → cases=4 passed=4 failed=0"
-    ] },
-    { "step": 5, "directive": "submit_completion_report", "status": "completed", "notes": [
-      "Report filed and archived with JSON + JUnit evidence; ledger updated"
-    ] }
+    {
+      "step": 1,
+      "directive": "scaffold_contract_suite",
+      "status": "completed",
+      "notes": [
+        "tools/contract_test_runner.py created; contract_samples/ seeded with four Level-0 pairs"
+      ]
+    },
+    {
+      "step": 2,
+      "directive": "wire_validators",
+      "status": "completed",
+      "notes": [
+        "Schema validator now enforces required fields, types, and telemetry enums for emoji-runtime@1.0 and factory-order@1.0"
+      ]
+    },
+    {
+      "step": 3,
+      "directive": "add_drift_checks",
+      "status": "completed",
+      "notes": [
+        "Runner flags missing/unexpected fields plus summary, directive, and glyph drift; results aggregated in drift_summary"
+      ]
+    },
+    {
+      "step": 4,
+      "directive": "offline_runner",
+      "status": "completed",
+      "notes": [
+        "tools/contract_test_runner.py --junit reports/contract_tests.junit.xml → cases=4 passed=4 failed=0"
+      ]
+    },
+    {
+      "step": 5,
+      "directive": "submit_completion_report",
+      "status": "completed",
+      "notes": [
+        "Report filed and archived with JSON + JUnit evidence; ledger updated"
+      ]
+    }
   ],
   "evidence": {
     "runner": "tools/contract_test_runner.py",
@@ -42,4 +67,3 @@
   "open_follow_ups": [],
   "attachments": []
 }
-

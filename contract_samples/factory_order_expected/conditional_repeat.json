@@ -1,0 +1,19 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "SAMPLE-CONDITIONAL-REPEAT",
+  "issued_by": "high_command_ai_0",
+  "target": "high_command_ai_0",
+  "priority": "high",
+  "timestamp_issued": "2025-11-04T02:00:00Z",
+  "summary": "Strategist recalibrates the formation on conditional repeat until success is secured.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "recalibrate",
+      "details": "Strategist recalibrates formation parameters under conditional-repeat control until success."
+    }
+  ],
+  "requires_ack": true,
+  "dependencies": [],
+  "attachments": []
+}

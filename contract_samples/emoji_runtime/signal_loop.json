@@ -1,0 +1,27 @@
+{
+  "schema": "emoji-runtime@1.0",
+  "glyph_chain": ["📡", "🔁", "📡", "✅"],
+  "spoken": ["scout", "signal", "command", "ready"],
+  "raw": ["📡", "🔁", "📡", "✅"],
+  "actor": "actor.scout",
+  "verb": "verb.signal",
+  "target": "actor.command",
+  "qualifiers": ["loop"],
+  "outcomes": ["outcome.ready"],
+  "summary": "Scout signals command relay until loop is ready",
+  "intent": {
+    "actor": "scout",
+    "action": "signal",
+    "target": "command relay",
+    "qualifiers": ["loop"],
+    "outcome": "ready"
+  },
+  "telemetry_stub": {
+    "batch_id": "scout-signal-20251104T013000Z",
+    "ritual": "signal_loop",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 760
+  },
+  "created_at": "2025-11-04T01:30:00Z"
+}

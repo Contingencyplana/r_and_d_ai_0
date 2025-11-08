@@ -1,0 +1,16 @@
+{
+  "ack_id": "order-2025-11-01-043-ack",
+  "order_id": "order-2025-11-01-043",
+  "timestamp": "2025-11-04T16:55:00Z",
+  "status": "received",
+  "validation": {
+    "schema_version": "factory-order@1.0",
+    "order_validation": "ORDER-043",
+    "checks": {
+      "format": "valid",
+      "schema": "valid",
+      "requirements": "valid"
+    }
+  },
+  "notes": "Order acknowledged by high_command_ai_0 for contract test execution."
+}

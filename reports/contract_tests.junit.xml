@@ -1,0 +1,1 @@
+<testsuite name="contract_tests" tests="4" failures="0" time="0.001"><testcase name="basic_ritual_forge" time="0.000" /><testcase name="conditional_repeat" time="0.000" /><testcase name="guarded_delivery" time="0.000" /><testcase name="signal_loop" time="0.000" /></testsuite>

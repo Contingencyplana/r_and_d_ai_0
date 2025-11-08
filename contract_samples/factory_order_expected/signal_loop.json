@@ -1,0 +1,19 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "SAMPLE-SIGNAL-LOOP",
+  "issued_by": "high_command_ai_0",
+  "target": "valiant_citadel_0",
+  "priority": "normal",
+  "timestamp_issued": "2025-11-04T01:30:00Z",
+  "summary": "Scout signals the command relay repeatedly, confirming the loop is ready.",
+  "directives": [
+    {
+      "step": 1,
+      "action": "signal",
+      "details": "Scout units maintain the signal loop until the command relay reports readiness."
+    }
+  ],
+  "requires_ack": false,
+  "dependencies": [],
+  "attachments": []
+}
