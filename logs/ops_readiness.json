@@ -1,0 +1,28 @@
+{
+  "timestamp_utc": "2025-11-13T15:57:54.266654+00:00",
+  "workspace": "r_and_d_ai_0",
+  "python": "3.12.6",
+  "hub_path": "C:\\Users\\Admin\\high_command_exchange",
+  "hub_exists": true,
+  "docs_present": {
+    "C:\\Users\\Admin\\r_and_d_ai_0\\RUNBOOK.md": true
+  },
+  "staged_checks": [
+    {
+      "kind": "order",
+      "file": "order-2025-11-13-901.json",
+      "missing": []
+    },
+    {
+      "kind": "ack",
+      "file": "order-2025-11-13-901-ack.json",
+      "missing": []
+    },
+    {
+      "kind": "report",
+      "file": "order-2025-11-13-901-report.json",
+      "missing": []
+    }
+  ],
+  "ok": true
+}

@@ -64,4 +64,10 @@ Keep the local workspace synced with the upstream Exchange repository via the Po
 
 ---
 
+## Python commands
+- Readiness: `python -m tools.ops_readiness`
+- Exchange (validate + sync): `python tools/exchange_all.py`
+
+---
+
 > "If a one-year-old can launch the forge, SHAGI is truly for everyone." — War Office, 25-OCT-2025
