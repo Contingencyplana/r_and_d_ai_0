@@ -18,3 +18,5 @@
 
 
 2025-10-21T00:00:00Z - Archived legacy test artifacts into exchange/archive/nonstandard (TEST-2025-10-19 series, safety snapshots)
+
+2025-11-15T15:42:03.7652975Z - Doc-refresh queue canonical path updated to planning/commonwealth_loop/doc_refresh_queue.md per War Office relocation; references audited and operators notified via ledger doc-refresh note.
