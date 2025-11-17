@@ -20,6 +20,7 @@
 - [ ] `war_office/README.md` (embed doc refresh queue summary)
 - [ ] `template.md` (refresh ledger logging instructions)
 - [ ] `golf_00/delta_00/README.md` (align alfa subcomponents with latest payload flow)
+- [x] `README.md` (2025-11-17: daily doc refresh covering Orders 045/046 status + queue pointer)
 
 ## Notes
 

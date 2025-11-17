@@ -1,6 +1,6 @@
 # r_and_d_ai_0 — Nightlands Research & Development
 
-**Last updated:** 2025-10-25  
+**Last updated:** 2025-11-17  
 **Operating charter:** War Office + High Command joint mandate
 
 ---
@@ -25,21 +25,30 @@ The meta-pivot `new_major_pivots/everything_at_once.md` explains how these layer
 
 ---
 
-## Current Focus — Pivot Five Rollout
+## Current Focus - Pivot Five Rollout
 
 - Draft Level-0 glyph grammar, narration guide, and toddler co-play protocol
 - Build Alfa composer prototype inside `golf_00/delta_00/alfa_04/`
 - Extend Toyfoundry export path with emoji translator + validator
 - Capture canary emoji programs to guard against compiler drift
 
-Completed restructure milestones include golf_10 completion reporting, golf_11 delta docs, and research domains for golf_00–golf_02.
+Completed restructure milestones include golf_10 completion reporting, golf_11 delta docs, and research domains for golf_00-golf_02.
+
+---
+
+## Daily Doc Refresh — 2025-11-17
+
+- Order-045 and Order-046 acknowledgements remain outstanding; keep `exchange/orders/pending/` copies intact until War Office + downstream fronts confirm receipt.
+- Monitor `exchange/reports/inbox/order-2025-11-10-046-report.json` and the staged Order-045 draft for pull events, then mirror ledger updates across the Delta→Theta→Zeta→Gamma→Alpha loop.
+- Use this refresh to align README messaging with the November doc queue (`planning/commonwealth_loop/doc_refresh_queue.md`) before nudging the other Genesis workspaces.
 
 ---
 
 ## Exchange & Ledger Loop
 
 - High Command orders, acknowledgements, and reports live under `exchange/`
-- Latest cycle: `order-2025-10-20-001` ack/report archived (see `exchange/acknowledgements/logged/` and `exchange/reports/archived/`)
+- Latest cycle: Order-046 completion report is staged in `exchange/reports/inbox/` and Toyfoundry logged the receipt; downstream acks remain open for Orders 045/046 until all fronts sync.
+- Pending tasks: retire the interim Order-045 draft once the War Office ack lands, archive reports accordingly, and append ledger notes for each reconciliation.
 - Ledger index and journal snapshots reside in `exchange/ledger/`
 
 Keep the local workspace synced with the upstream Exchange repository via the PowerShell automation documented in `exchange/README.md`.
@@ -59,8 +68,9 @@ Keep the local workspace synced with the upstream Exchange repository via the Po
 ## Coordination Notes
 
 - Commit/Push cadence stays in sync with High Command directives (orders drive work, reports close loops)
-- Additional research_domain files will be authored only when a golf theatre demonstrates concrete need (currently `golf_00`–`golf_02`)
+- Additional research_domain files will be authored only when a golf theatre demonstrates concrete need (currently `golf_00`-`golf_02`)
 - For cross-workspace updates, mirror README/meta changes in Valiant Citadel, Toyfoundry, and Toysoldiers to keep the five-pivot doctrine aligned.
+- Daily doc refresh checkpoints live in `planning/commonwealth_loop/doc_refresh_queue.md`; update this README whenever the queue advances so downstream mirrors pick up the latest status.
 
 ---
 
