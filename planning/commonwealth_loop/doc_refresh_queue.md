@@ -17,7 +17,7 @@
 - [x] `docs/player_routing_brief.md` (clarify battlegrid handoff cadence)
 - [x] `new_major_pivots/new_major_pivot_5.md` (2025-11-08: logged translator rollout evidence + progress tracker)
 - [x] War Office Tenfold Genesis bundle (2025-11-14: `planning/workspaces/war_office_ai_0/` runbook + `planning/pivotal_fronts/genesis_workspaces.md`)
-- [ ] `war_office/README.md` (embed doc refresh queue summary)
+- [x] `war_office/README.md` (2025-11-17: embedded doc queue snapshot + Pivot Five crosslinks)
 - [ ] `template.md` (refresh ledger logging instructions)
 - [ ] `golf_00/delta_00/README.md` (align alfa subcomponents with latest payload flow)
 - [x] `README.md` (2025-11-17: daily doc refresh covering Orders 045/046 status + queue pointer)
@@ -27,4 +27,4 @@
 - Treat the list as rolling; append new targets when pivots open.
 - Use smaller pull requests per work block to keep review pace manageable.
 - Coordinate with Toyfoundry/Toysoldiers when documentation impacts their operational runbooks.
-- Next target: refresh `war_office/README.md` with the doc queue summary and Pivot Five crosslinks.
+- Next target: refresh `template.md` with the tightened ledger logging guidance, then tackle `golf_00/delta_00/README.md`.
