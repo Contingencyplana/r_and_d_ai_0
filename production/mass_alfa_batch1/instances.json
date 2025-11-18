@@ -1,0 +1,35 @@
+{
+  "batch": "mass_alfa_batch1",
+  "generated_at": "2025-11-18T00:26:00Z",
+  "baseline_tag": "forge-alfa@2025-11-13-054",
+  "source_order": "order-2025-11-13-054",
+  "instances": [
+    {
+      "id": "alfa-m02",
+      "codename": "Alfa M02",
+      "workspace": "r_and_d_ai_0",
+      "role": "Theta",
+      "status": "hydrated",
+      "hydrated_at": "2025-11-18T00:25:30Z",
+      "paths": {
+        "workspace_slot": "golf_01/delta_12/alfa_02",
+        "manifest": "production/mass_alfa_batch1/alfa_m02/README.md",
+        "telemetry": "production/mass_alfa_batch1/alfa_m02/telemetry.json",
+        "baseline": "production/mass_alfa_batch1/baseline.md"
+      },
+      "logs": {
+        "readiness": "logs/mass_alfa_batch1/Alfa-M02/ops_readiness.json",
+        "exchange": "logs/mass_alfa_batch1/Alfa-M02/exchange_all.json"
+      },
+      "exchange": {
+        "ack": "outbox/acks/order-2025-11-14-056-ack.json",
+        "report": "outbox/reports/order-2025-11-14-056-report.json",
+        "hello": "outbox/reports/hello-Alfa-M02-20251118T002600Z.json"
+      },
+      "notes": [
+        "Telemetry awaiting full Exchange push; keep hello report staged locally until sync window opens.",
+        "All evidence ties back to Toyfoundry baseline tag forge-alfa@2025-11-13-054."
+      ]
+    }
+  ]
+}

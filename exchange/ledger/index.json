@@ -245,6 +245,12 @@
       "status": "received",
       "ack_path": "acknowledgements/logged/order-2025-11-10-046-ack.json",
       "report_path": "reports/inbox/order-2025-11-10-046-report.json"
+    },
+    "order-2025-11-14-056": {
+      "status": "acknowledged",
+      "order_path": "orders/dispatched/order-2025-11-14-056.json",
+      "ack_path": "acknowledgements/logged/order-2025-11-14-056-ack.json",
+      "report_path": "reports/archived/order-2025-11-14-056-report.json"
     }
   },
   "reports": {
