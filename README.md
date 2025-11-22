@@ -49,6 +49,7 @@ Completed restructure milestones include golf_10 completion reporting, golf_11 d
 - High Command orders, acknowledgements, and reports live under `exchange/`
 - Latest cycle: Order-046 completion report is staged in `exchange/reports/inbox/` and Toyfoundry logged the receipt; downstream acks remain open for Orders 045/046 until all fronts sync.
 - Pending tasks: retire the interim Order-045 draft once the War Office ack lands, archive reports accordingly, and append ledger notes for each reconciliation.
+- Hybrid cadence restored: run `python tools/end_of_block.py` for heartbeat + sync + readiness + exchange; smoke uses `python tools/factory_order_emitter.py --help` (no more `exchange_all` smoke caveat).
 - Ledger index and journal snapshots reside in `exchange/ledger/`
 
 Keep the local workspace synced with the upstream Exchange repository via the PowerShell automation documented in `exchange/README.md`.
@@ -75,8 +76,10 @@ Keep the local workspace synced with the upstream Exchange repository via the Po
 ---
 
 ## Python commands
+- Cadence (heartbeat + sync + readiness + exchange): `python tools/end_of_block.py`
 - Readiness: `python -m tools.ops_readiness`
-- Exchange (validate + sync): `python tools/exchange_all.py`
+- Exchange (manual push if needed): `python tools/exchange_all.py`
+- Smoke (factory emitter presence): `python tools/factory_order_emitter.py --help`
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2025-11-18T00:25:29.595924+00:00",
+  "timestamp_utc": "2025-11-22T12:23:30.378700+00:00",
   "workspace": "r_and_d_ai_0",
   "hub_path": "C:\\Users\\Admin\\high_command_exchange",
   "validated_ok": true,
@@ -9,10 +9,13 @@
       "order-2025-11-13-901.json"
     ],
     "reports": [
-      "order-2025-11-13-901-report.json"
+      "hello-Alfa-M02-20251118T002600Z.json",
+      "order-2025-11-13-901-report.json",
+      "order-2025-11-14-056-report.json"
     ],
     "acks": [
-      "order-2025-11-13-901-ack.json"
+      "order-2025-11-13-901-ack.json",
+      "order-2025-11-14-056-ack.json"
     ]
   }
 }

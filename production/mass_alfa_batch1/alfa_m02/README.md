@@ -7,7 +7,7 @@
 
 ## Steps Executed
 1. Mirrored Toyfoundry’s baseline into `production/mass_alfa_batch1/alfa_m02` and mapped the slot inside `golf_01/delta_12/alfa_02`.
-2. Ran readiness + exchange smoke (`python -m tools.ops_readiness`, `python tools/exchange_all.py`) and copied the logs to both `alfa_m02/logs/` and `logs/mass_alfa_batch1/Alfa-M02/`.
+2. Ran readiness + emitter smoke (`python -m tools.ops_readiness`, `python tools/factory_order_emitter.py --help`) and copied the logs to both `alfa_m02/logs/` and `logs/mass_alfa_batch1/Alfa-M02/`.
 3. Authored telemetry (`telemetry.json`) plus the acknowledgement, hello, and completion report scaffolds for Exchange.
 4. Logged the activity inside `production/mass_alfa_batch1/instances.json` and queued ledger updates for High Command.
 

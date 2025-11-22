@@ -6,7 +6,7 @@
 ## Execution Snapshot
 1. Mirrored Toyfoundry's `forge-alfa@2025-11-13-054` baseline into `production/mass_alfa_batch1/`.
 2. Promoted Alfa M02 into the Theta slot `golf_01/delta_12/alfa_02` and recorded the mapping in `instances.json`.
-3. Re-ran readiness + exchange smoke (`python -m tools.ops_readiness`, `python tools/exchange_all.py`) and archived the logs under `logs/mass_alfa_batch1/Alfa-M02/`.
+3. Re-ran readiness + emitter smoke (`python -m tools.ops_readiness`, `python tools/factory_order_emitter.py --help`) and archived the logs under `logs/mass_alfa_batch1/Alfa-M02/`.
 4. Captured telemetry for Alfa M02 (`alfa_m02/telemetry.json`) plus hello/factory reports ahead of Exchange sync.
 
 ## Artifact Inventory

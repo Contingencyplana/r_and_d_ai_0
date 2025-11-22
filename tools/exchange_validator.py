@@ -1,8 +1,8 @@
 """Exchange validator attachment. Copy to tools/ to use in a workspace.
 
 Validates exchange layout vs ledger/index.json:
-- pending orders  status=pending and ack in acknowledgements/pending
-- dispatched orders  status=dispatched and ack in acknowledgements/logged
+- pending orders ↔ status=pending and ack in acknowledgements/pending
+- dispatched orders ↔ status=dispatched and ack in acknowledgements/logged
 """
 
 from __future__ import annotations

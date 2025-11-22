@@ -19,13 +19,13 @@
       "command": "python -m tools.ops_readiness",
       "log": "production/mass_alfa_batch1/alfa_m02/logs/readiness.json",
       "status": "green",
-      "completed_at": "2025-11-18T00:25:17Z"
+      "completed_at": "2025-11-22T12:23:30Z"
     },
     "smoke": {
-      "command": "python tools/exchange_all.py",
+      "command": "python tools/factory_order_emitter.py --help",
       "log": "production/mass_alfa_batch1/alfa_m02/logs/smoke.txt",
       "status": "green",
-      "completed_at": "2025-11-18T00:25:29Z"
+      "completed_at": "2025-11-22T12:24:11Z"
     }
   },
   "exchange": {

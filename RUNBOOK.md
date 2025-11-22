@@ -13,7 +13,7 @@ Research Loop (per session)
 3. **Prototype** – Build/test inside the appropriate golf/delta/alfa folders; capture notes under `planning/` or `new_major_pivots/`.
 4. **Document** – Update research READMEs plus any schema or emoji grammar drafts touched during the session.
 5. **Report** – Stage acknowledgements/reports under `outbox/` referencing evidence paths; rerun readiness to confirm metadata completeness.
-6. **Exchange** – Execute `python tools/exchange_all.py` to push the staged bundle and verify `logs/exchange_all.json` updated.
+6. **Exchange** – Run `python tools/end_of_block.py` (heartbeat → offline sync → readiness → exchange) and verify `logs/exchange_all.json` updated.
 
 Quality Gates
 - All staged JSON files provide `created_at` (orders + reports) and `ack_timestamp` (acks).
@@ -24,6 +24,7 @@ Quality Gates
 Evidence & Logging
 - Readiness status: `logs/ops_readiness.json`
 - Exchange pushes: `logs/exchange_all.json`
+- Smoke check: `python tools/factory_order_emitter.py --help` (confirm CLI available; use as the default smoke)
 - Research notes: `planning/`, `new_major_pivots/`
 - Ledger + attachments: `exchange/ledger/`, `exchange/attachments/`
 
